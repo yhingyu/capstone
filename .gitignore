@@ -1,2 +1,26 @@
-data/raw/household_power_consumption.txt
-data/raw/household_power_consumption.zip
+# Anaconda and Python
+.conda/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Raw and processed datasets
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Generated model artifacts
+models/*
+!models/.gitkeep
+
+# Generated figures and reports
+outputs/figures/*
+!outputs/figures/.gitkeep
+
+# Local configuration
+.env
+.DS_Store
+Thumbs.db
