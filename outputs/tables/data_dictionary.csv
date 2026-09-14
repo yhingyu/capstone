@@ -1,0 +1,9 @@
+variable,description,role,feature_type,unit,allowed_values,pandas_dtype,missing_count,missing_percent,observed_minimum,observed_maximum
+datetime,Combined observation date and time,Time index,Datetime,YYYY-MM-DD HH:MM:SS,Valid timestamps at one-minute intervals,datetime64[ns],0,0.0,2006-12-16 17:24:00,2010-11-26 21:02:00
+Global_active_power,Household global minute-averaged active electrical power,Predictor and basis of target,Continuous numeric,kilowatt (kW),Non-negative real number or missing,float64,25979,1.2518437457686005,0.076,11.122
+Global_reactive_power,Household global minute-averaged reactive electrical power,Predictor,Continuous numeric,kilowatt (kW),Non-negative real number or missing,float64,25979,1.2518437457686005,0.0,1.39
+Voltage,Minute-averaged household voltage,Predictor,Continuous numeric,volt (V),Positive real number or missing,float64,25979,1.2518437457686005,223.2,254.15
+Global_intensity,Household global minute-averaged current intensity,Predictor,Continuous numeric,ampere (A),Non-negative real number or missing,float64,25979,1.2518437457686005,0.2,48.4
+Sub_metering_1,"Kitchen energy use, mainly dishwasher, oven, and microwave",Predictor,Continuous numeric,watt-hour (Wh),Non-negative real number or missing,float64,25979,1.2518437457686005,0.0,88.0
+Sub_metering_2,"Laundry-room energy use, mainly washing machine, tumble dryer, refrigerator, and lighting",Predictor,Continuous numeric,watt-hour (Wh),Non-negative real number or missing,float64,25979,1.2518437457686005,0.0,80.0
+Sub_metering_3,Energy use associated with the electric water heater and air conditioner,Predictor,Continuous numeric,watt-hour (Wh),Non-negative real number or missing,float64,25979,1.2518437457686005,0.0,31.0
