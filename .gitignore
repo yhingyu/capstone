@@ -15,6 +15,8 @@ data/processed/*
 # Generated model artifacts
 models/*
 !models/.gitkeep
+!models/*.json
+!models/*.joblib
 
 # Generated figures and reports
 outputs/figures/*

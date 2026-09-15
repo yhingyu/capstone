@@ -1,0 +1,12 @@
+{
+  "random_state": 42,
+  "maximum_short_gap_minutes": 60,
+  "minimum_daily_coverage": 0.95,
+  "high_consumption_multiplier": 1.2,
+  "high_consumption_window_days": 30,
+  "train_fraction": 0.7,
+  "validation_fraction": 0.15,
+  "test_fraction": 0.15,
+  "correlation_redundancy_threshold": 0.98,
+  "selection_top_k": 15
+}
