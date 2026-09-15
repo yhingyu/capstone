@@ -1,0 +1,6 @@
+measure,value
+Prediction interval level,0.9
+Interval radius kWh,8.676962086690267
+Observed test coverage,0.930635838150289
+Test MAE 95% CI lower,3.2277566395286605
+Test MAE 95% CI upper,4.255945241919576

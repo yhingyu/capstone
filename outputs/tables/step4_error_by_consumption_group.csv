@@ -1,0 +1,3 @@
+actual_high_consumption,days,MAE_kWh,median_absolute_error_kWh
+Normal-consumption day,150,3.1357955788065595,2.2410507102966335
+High-consumption day,23,7.553955680117399,7.510105155436197

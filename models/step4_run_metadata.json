@@ -1,0 +1,85 @@
+{
+  "selected_model": "XGBoost",
+  "selection_rule": "Lowest validation MAE among trained candidate models",
+  "stronger_baseline": "Seasonal naive baseline",
+  "selected_features": [
+    "day_of_week",
+    "dow_sin",
+    "energy_change_7d",
+    "energy_ewm_7",
+    "energy_lag_1",
+    "energy_lag_14",
+    "energy_lag_21",
+    "energy_lag_28",
+    "energy_lag_7",
+    "energy_roll_max_14",
+    "energy_roll_max_30",
+    "energy_roll_max_7",
+    "energy_roll_mean_14",
+    "energy_roll_mean_30",
+    "energy_roll_mean_7",
+    "energy_roll_min_14",
+    "energy_roll_min_30",
+    "energy_roll_min_7",
+    "month",
+    "time_index",
+    "voltage_std_v_lag_1",
+    "year_cos"
+  ],
+  "configuration": {
+    "random_state": 42,
+    "cv_splits": 5,
+    "primary_metric": "MAE",
+    "minimum_mae_improvement_percent": 10.0,
+    "maximum_mape_percent": 15.0,
+    "minimum_warning_recall": 0.8,
+    "minimum_warning_precision": 0.75,
+    "prediction_interval_level": 0.9,
+    "bootstrap_iterations": 2000
+  },
+  "split_boundaries": {
+    "train_start": "2007-01-16 00:00:00",
+    "train_end": "2009-05-30 00:00:00",
+    "validation_start": "2009-05-31 00:00:00",
+    "validation_end": "2010-02-23 00:00:00",
+    "test_start": "2010-02-24 00:00:00",
+    "test_end": "2010-11-25 00:00:00"
+  },
+  "package_versions": {
+    "python": "3.11.16",
+    "pandas": "2.3.3",
+    "numpy": "2.4.6",
+    "scikit_learn": "1.9.1",
+    "xgboost": "3.2.0",
+    "shap": "0.51.0",
+    "joblib": "1.6.0"
+  },
+  "final_test_metrics": {
+    "MAE_kWh": 3.723181025801641,
+    "RMSE_kWh": 5.1040456225734925,
+    "MAPE_percent": 18.726593355792534,
+    "R2": 0.5458191989714091
+  },
+  "baseline_test_metrics": {
+    "MAE_kWh": 5.728153564547206,
+    "RMSE_kWh": 7.862431801845644,
+    "MAPE_percent": 28.61803410500494,
+    "R2": -0.07773865391213186
+  },
+  "mae_improvement_percent": 35.00207381231499,
+  "warning_metrics": {
+    "precision": 0.7142857142857143,
+    "recall_coverage": 0.21739130434782608,
+    "f1": 0.3333333333333333,
+    "specificity": 0.9866666666666667,
+    "true_negative": 148,
+    "false_positive": 2,
+    "false_negative": 18,
+    "true_positive": 5
+  },
+  "prediction_interval": {
+    "nominal_level": 0.9,
+    "radius_kwh": 8.676962086690267,
+    "observed_test_coverage": 0.930635838150289
+  }
+}

@@ -1,0 +1,5 @@
+criterion,target,observed,met
+MAE improvement over stronger baseline,>= 10%,35.00%,True
+MAPE,<= 15%,18.73%,False
+Warning recall / coverage,>= 80%,21.74%,False
+Warning precision,>= 75%,71.43%,False
