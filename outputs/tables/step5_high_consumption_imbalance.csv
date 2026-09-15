@@ -1,0 +1,7 @@
+split,group,days,percent
+Train,Normal,612,76.30922693266832
+Train,High consumption,190,23.690773067331673
+Validation,Normal,139,80.81395348837209
+Validation,High consumption,33,19.186046511627907
+Test,Normal,150,86.70520231213872
+Test,High consumption,23,13.294797687861271

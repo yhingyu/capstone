@@ -1,0 +1,4 @@
+group_dimension,demographic_parity_difference_analogue,disparate_impact_ratio_analogue,equalized_odds_difference_analogue
+consumption_band,0.2222222222222222,0.0,0.5
+day_type,0.11699999999999999,0.064,0.2076923076923077
+season,0.16129032258064516,0.0,0.3285714285714285

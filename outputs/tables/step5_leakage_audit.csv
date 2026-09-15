@@ -1,0 +1,7 @@
+audit_check,passed,evidence
+Chronological split,True,Train precedes validation; validation precedes test
+No target field in predictors,True,Suspicious fields: []
+Past/known feature semantics,True,Reviewed 22 of 22 selected features
+Model selection before test,True,XGBoost selected by validation MAE in Step 4
+Test not used for tuning,True,Grid/random searches used training TimeSeriesSplit only
+Scaling inside CV,True,Ridge scaler was inside its Pipeline

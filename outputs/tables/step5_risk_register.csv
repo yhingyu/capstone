@@ -1,0 +1,10 @@
+risk,evidence,severity,mitigation
+Demographic representation,One French household; no sensitive groups,High,Collect consented multi-household Philippine data and audit every sufficiently represented group
+Energy-burden inequity,Same kWh error can have different financial impact by income,High,Collect income band only when justified and protected; evaluate cost-weighted error and energy burden
+High-use underdetection,18 of 23 test high-use days were missed,High,"Validation-calibrated alerts, quantile forecasts, or a cost-sensitive warning classifier"
+Alert fatigue,Lower thresholds can increase false warnings,Medium,"Use multi-level alerts, user controls, cooldown periods, and precision monitoring"
+Temporal distribution shift,"Weather, appliances and routines change",High,"Monitor drift, rolling error and warning rates; retrain only after validation"
+Geographic transfer,French 2006–2010 data may not represent Meralco homes,High,Pilot with local data before deployment; avoid population-wide claims
+Privacy,Fine-grained energy traces reveal routines and occupancy,High,"Data minimization, encryption, access controls, retention limits and explicit consent"
+Automation reliance,Users may treat estimates as official bills,Medium,"Label outputs as estimates, show uncertainty, explain drivers and provide manual override"
+Missing-data exclusion,Low-coverage periods receive no prediction,Medium,Display data-quality status and never silently substitute unreliable forecasts

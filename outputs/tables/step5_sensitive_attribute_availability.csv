@@ -1,0 +1,7 @@
+sensitive_dimension,available,evidence,consequence
+Gender,False,Not collected,Demographic parity/equalized odds not computable
+Race or ethnicity,False,Not collected,Demographic parity/equalized odds not computable
+Age,False,Not collected,Age-group performance not computable
+Income,False,Not collected,Income-group performance not computable
+Socioeconomic status,False,Not collected,Energy-burden fairness not computable
+Household identity,False,Only one anonymous household,Between-household fairness not computable
