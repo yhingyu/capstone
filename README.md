@@ -348,8 +348,8 @@ The validator confirms that required deliverables exist, JSON and CSV artifacts 
 ## Final submission deliverables
 
 - Public repository: <https://github.com/yhingyu/capstone>
-- Final report: `outputs/reports/Final_Capstone_Report_Household_Energy_Monitoring.pdf`
-- Editable report: `outputs/reports/Final_Capstone_Report_Household_Energy_Monitoring.docx`
+- Final report: `outputs/reports/07_Final_Capstone_Report_Household_Energy_Monitoring.pdf`
+- Editable report: `outputs/reports/07_Final_Capstone_Report_Household_Energy_Monitoring.docx`
 - Reproducible notebooks: `notebooks/02_*.ipynb` through `notebooks/05_*.ipynb`
 - Saved final model: `models/final_energy_forecast_model.joblib`
 - Reproducibility metadata: `models/step4_run_metadata.json`
