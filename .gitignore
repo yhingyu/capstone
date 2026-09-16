@@ -27,3 +27,9 @@ outputs/figures/*
 .DS_Store
 Thumbs.db
 .vscode/settings.json
+
+# Step 8 local monitoring and experiment tracking
+data/monitoring/*
+!data/monitoring/.gitkeep
+mlruns/
+*.log

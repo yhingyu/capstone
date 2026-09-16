@@ -5,11 +5,42 @@ on:
   pull_request:
 
 jobs:
-  repository-checks:
+  quality-and-tests:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check Python syntax
-        run: python -m py_compile src/*.py
-      - name: Validate Step 7 deliverables
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install app and test dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Check Python syntax and undefined names
+        run: |
+          python -m py_compile src/*.py app/app.py app/energy_monitor/*.py
+          ruff check --select E9,F63,F7,F82 app tests src
+      - name: Run unit tests
+        run: pytest -q
+      - name: Validate required deliverables
         run: python src/validate_repository.py
+
+  docker-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build local POC image
+        run: docker build -t household-energy-monitor-poc:ci .
+      - name: Start container and verify health endpoint
+        run: |
+          docker run --detach --name energy-monitor-ci --publish 8050:8050 household-energy-monitor-poc:ci
+          for attempt in {1..20}; do
+            if curl --fail --silent http://127.0.0.1:8050/health; then
+              exit 0
+            fi
+            sleep 2
+          done
+          docker logs energy-monitor-ci
+          exit 1
+      - name: Stop test container
+        if: always()
+        run: docker rm --force energy-monitor-ci || true
