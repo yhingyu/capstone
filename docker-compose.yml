@@ -1,0 +1,12 @@
+services:
+  energy-monitor:
+    build:
+      context: .
+    image: household-energy-monitor-poc:1.0.0
+    ports:
+      - "8050:8050"
+    environment:
+      ENERGY_CONFIG: /app/config/app.yaml
+    volumes:
+      - ./data/monitoring:/app/data/monitoring
+    restart: unless-stopped

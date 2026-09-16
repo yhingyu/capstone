@@ -354,6 +354,20 @@ The validator confirms that required deliverables exist, JSON and CSV artifacts 
 - Saved final model: `models/final_energy_forecast_model.joblib`
 - Reproducibility metadata: `models/step4_run_metadata.json`
 
+## Step 8: Dockerized deployment and MLOps POC
+
+The repository includes a local **Dash proof of concept** that loads the saved XGBoost model and forecasts next-day household consumption. Users can upload CSV/Excel readings or add daily readings manually. The interface shows a 90% prediction band, configurable advisory level, and illustrative PHP cost estimate.
+
+Run it with Docker:
+
+```bash
+docker compose up --build
+```
+
+Open <http://localhost:8050>. Full instructions, supported input schemas, testing commands, local MLflow tracking, monitoring, versioning, rollback, and the recommended future cloud architecture are documented in [docs/STEP8_DEPLOYMENT.md](docs/STEP8_DEPLOYMENT.md).
+
+This deployment is a POC. It is trained on one French household, has limited high-use warning recall, and must not be treated as an official Meralco billing or safety system. Cloud deployment is intentionally not implemented at this stage. Demo media will be added after interactive acceptance testing.
+
 ## Responsible use statement
 
 This project is an academic prototype. It must not be used to determine an official electricity bill, disconnect service, penalize a household, or make high-stakes financial decisions. Any real-world implementation should undergo local data validation, security and privacy review, user testing, drift monitoring, and a new fairness assessment.

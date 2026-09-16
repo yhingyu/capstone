@@ -1,0 +1,14 @@
+.git
+.github
+.ipynb_checkpoints
+__pycache__
+*.pyc
+data/raw
+data/interim
+data/processed
+data/monitoring
+notebooks
+outputs
+presentations
+tests
+demo

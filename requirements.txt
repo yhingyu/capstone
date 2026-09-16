@@ -32,3 +32,14 @@ notebook>=7.0,<8.0
 ipykernel>=6.0,<7.0
 nbconvert>=7.0,<8.0
 
+# Step 8 local Dash deployment
+dash>=2.18,<4.0
+gunicorn>=22,<24
+openpyxl>=3.1,<4.0
+plotly>=5.20,<7.0
+pyyaml>=6,<7
+
+# Step 8 testing, quality, and local experiment tracking
+pytest>=8,<10
+ruff>=0.7,<1.0
+mlflow>=2.17,<4.0

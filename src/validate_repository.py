@@ -27,6 +27,14 @@ REQUIRED_FILES = [
     "outputs/reports/Final_Capstone_Report_Household_Energy_Monitoring.pdf",
     "presentations/06A_Technical_Presentation_Household_Energy.ipynb",
     "presentations/06B_Business_Presentation_Household_Energy.pptx",
+    "Dockerfile",
+    "docker-compose.yml",
+    "requirements-app.txt",
+    "app/app.py",
+    "config/app.yaml",
+    "docs/STEP8_DEPLOYMENT.md",
+    "docs/MONITORING_AND_ROLLBACK.md",
+    "data/sample/daily_readings_example.csv",
 ]
 
 JSON_FILES = [

@@ -1,0 +1,28 @@
+app:
+  title: "Household Energy Monitor"
+  proof_of_concept: true
+  default_rate_php_per_kwh: 13.00
+  sample_data_path: "data/sample/daily_readings_example.csv"
+
+model:
+  name: "XGBoost next-day energy forecaster"
+  version: "step4-xgboost-1.0.0"
+  path: "models/final_energy_forecast_model.joblib"
+  feature_columns_path: "models/feature_columns.json"
+  prediction_interval_radius_kwh: 8.676962086690267
+
+features:
+  training_origin: "2006-12-16"
+  default_voltage_std_v: 3.0
+
+advisory:
+  high_use_multiplier: 1.20
+  levels:
+    watch: 0.80
+    moderate: 0.90
+    high: 1.00
+
+monitoring:
+  prediction_log_path: "data/monitoring/predictions.jsonl"
+  drift_review_window_predictions: 100
+  retraining_review_frequency: "quarterly or after a material data shift"
