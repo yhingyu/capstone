@@ -386,6 +386,14 @@ This project is an academic prototype. It must not be used to determine an offic
 5. Measure engagement, avoided kWh, tariff-adjusted savings, and operating cost.
 6. Reassess privacy, fairness, and model drift before broader deployment.
 
+### Generative AI scope decision
+
+Generative AI was evaluated but intentionally excluded from the current POC.
+The application's numerical forecasts, validation rules, prediction intervals,
+and advisory levels require reproducible and auditable outputs. An LLM would add
+cost, privacy risk, and output variability without improving the underlying
+forecast. Template-based explanations are therefore used for this prototype.
+
 ## Author
 
 **Edixon D. Yu Jr.**  
