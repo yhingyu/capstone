@@ -368,6 +368,10 @@ Open <http://localhost:8050>. Full instructions, supported input schemas, testin
 
 This deployment is a POC. It is trained on one French household, has limited high-use warning recall, and must not be treated as an official Meralco billing or safety system. Cloud deployment is intentionally not implemented at this stage. Demo media will be added after interactive acceptance testing.
 
+## Step 8 POC Demonstration
+
+[Watch the Household Energy Monitor demonstration](demo/08_dashboard_demo.mp4)
+
 ## Responsible use statement
 
 This project is an academic prototype. It must not be used to determine an official electricity bill, disconnect service, penalize a household, or make high-stakes financial decisions. Any real-world implementation should undergo local data validation, security and privacy review, user testing, drift monitoring, and a new fairness assessment.
