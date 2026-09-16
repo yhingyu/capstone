@@ -66,23 +66,26 @@ flowchart LR
 ```text
 capstone/
 ├── data/
-│   ├── raw/                 # Original downloaded data; normally not committed
-│   ├── interim/             # Intermediate processed data
-│   └── processed/           # Modeling-ready datasets
-├── models/                  # Saved models, preprocessors, and configurations
+│   ├── raw/                 # Downloaded source data (ignored by Git)
+│   ├── interim/             # Intermediate data (ignored by Git)
+│   ├── processed/           # Modeling-ready data (ignored by Git)
+│   └── README.md            # Dataset source, paths, and handling policy
+├── models/                  # Saved models, feature schema, and run configurations
+├── src/
+│   ├── download_data.py     # Reproducible UCI dataset download
+│   └── validate_repository.py # Step 7 structure/artifact checks
 ├── notebooks/
 │   ├── 02_data_collection_and_understanding.ipynb
 │   ├── 03_preprocessing_eda_feature_engineering.ipynb
 │   ├── 04_model_implementation_and_comparison.ipynb
 │   └── 05_bias_fairness_analysis.ipynb
 ├── outputs/
-│   ├── reports/             # Final report in DOCX and PDF formats
-|   |   ├── 01_Problem_Understanding_and_Framing.docx 
-|   |   ├── 01_problem_understanding_and_framing.pdf   
+│   ├── reports/             # Step 1 and final reports (DOCX/PDF)
+│   ├── tables/              # Reproducible metrics and audit outputs
 │   └── figures/             # Exported charts and explainability figures
 ├── presentations/
-│   ├── Technical_Presentation_Household_Energy.ipynb
-│   └── Business_Presentation_Household_Energy.pptx
+│   ├── 06A_Technical_Presentation_Household_Energy.ipynb
+│   └── 06B_Business_Presentation_Household_Energy.pptx
 ├── environment.yml          # Conda environment specification
 ├── README.md
 └── requirements.txt
@@ -249,11 +252,13 @@ jupyter lab
 
 ## Downloading the dataset
 
-Download the dataset from the [UCI dataset page](https://archive.ics.uci.edu/dataset/235/individual+household+electric+power+consumption), extract it, and place the source text file under:
+Download and extract the official UCI dataset automatically from the repository root:
 
-```text
-data/raw/household_power_consumption.txt
+```bash
+python src/download_data.py
 ```
+
+Alternatively, download it from the [UCI dataset page](https://archive.ics.uci.edu/dataset/235/individual+household+electric+power+consumption), extract it, and place the source text file at `data/raw/household_power_consumption.txt`.
 
 The raw dataset is large and should normally be excluded from Git using `.gitignore`. The notebooks should document the download source and recreate derived files from the raw data.
 
@@ -261,10 +266,11 @@ The raw dataset is large and should normally be excluded from Git using `.gitign
 
 Run the notebooks in numerical order:
 
-1. `01_data_collection_and_understanding.ipynb`
-2. `02_preprocessing_eda_feature_engineering.ipynb`
-3. `03_model_implementation_and_comparison.ipynb`
-4. `04_bias_fairness_analysis.ipynb`
+1. Review `outputs/reports/01_Problem_Understanding_and_Framing.docx` (Step 1).
+2. Run `notebooks/02_data_collection_and_understanding.ipynb`.
+3. Run `notebooks/03_preprocessing_eda_feature_engineering.ipynb`.
+4. Run `notebooks/04_model_implementation_and_comparison.ipynb`.
+5. Run `notebooks/05_bias_fairness_analysis.ipynb`.
 
 Before running them:
 
@@ -277,8 +283,8 @@ Generated models, preprocessors, and configurations should be saved under `model
 
 ## Presentations
 
-- **Technical presentation:** `presentations/Technical_Presentation_Household_Energy.ipynb`
-- **Business presentation:** `presentations/Business_Presentation_Household_Energy.pptx`
+- **Technical presentation:** `presentations/06A_Technical_Presentation_Household_Energy.ipynb`
+- **Business presentation:** `presentations/06B_Business_Presentation_Household_Energy.pptx`
 
 Run all cells in the technical presentation before starting its slideshow so that generated charts are included.
 
@@ -293,7 +299,7 @@ conda activate household-energy-capstone
 Open the technical deck in JupyterLab:
 
 ```bash
-jupyter lab presentations/Technical_Presentation_Household_Energy.ipynb
+jupyter lab presentations/06A_Technical_Presentation_Household_Energy.ipynb
 ```
 
 In JupyterLab, select **Run → Run All Cells** and save the notebook. This ensures that all charts and code outputs appear during the presentation.
@@ -302,7 +308,7 @@ To launch the notebook as a browser-based Reveal.js slideshow, run:
 
 ```bash
 jupyter nbconvert \
-  presentations/Technical_Presentation_Household_Energy.ipynb \
+  presentations/06A_Technical_Presentation_Household_Energy.ipynb \
   --to slides \
   --post serve
 ```
@@ -323,11 +329,30 @@ To export the slideshow without starting a local server:
 
 ```bash
 jupyter nbconvert \
-  presentations/Technical_Presentation_Household_Energy.ipynb \
+  presentations/06A_Technical_Presentation_Household_Energy.ipynb \
   --to slides
 ```
 
 This creates an HTML file beside the notebook. The Reveal.js assets may require an internet connection unless they are configured for local use.
+
+## Repository validation
+
+Run the Step 7 checks after cloning or before submission:
+
+```bash
+python src/validate_repository.py
+```
+
+The validator confirms that required deliverables exist, JSON and CSV artifacts are readable, no tracked deliverable is empty, the final model and feature schema are present, and the notebook numbering is consistent. A GitHub Actions workflow runs the same checks on every push and pull request.
+
+## Final submission deliverables
+
+- Public repository: <https://github.com/yhingyu/capstone>
+- Final report: `outputs/reports/Final_Capstone_Report_Household_Energy_Monitoring.pdf`
+- Editable report: `outputs/reports/Final_Capstone_Report_Household_Energy_Monitoring.docx`
+- Reproducible notebooks: `notebooks/02_*.ipynb` through `notebooks/05_*.ipynb`
+- Saved final model: `models/final_energy_forecast_model.joblib`
+- Reproducibility metadata: `models/step4_run_metadata.json`
 
 ## Responsible use statement
 

@@ -1,0 +1,15 @@
+name: Validate capstone repository
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  repository-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check Python syntax
+        run: python -m py_compile src/*.py
+      - name: Validate Step 7 deliverables
+        run: python src/validate_repository.py
