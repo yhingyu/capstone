@@ -30,3 +30,17 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build local POC image
         run: docker build -t household-energy-monitor-poc:ci .
+      - name: Start container and verify health endpoint
+        run: |
+          docker run --detach --name energy-monitor-ci --publish 8050:8050 household-energy-monitor-poc:ci
+          for attempt in {1..20}; do
+            if curl --fail --silent http://127.0.0.1:8050/health; then
+              exit 0
+            fi
+            sleep 2
+          done
+          docker logs energy-monitor-ci
+          exit 1
+      - name: Stop test container
+        if: always()
+        run: docker rm --force energy-monitor-ci || true
