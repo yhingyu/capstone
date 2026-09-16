@@ -370,7 +370,8 @@ This deployment is a POC. It is trained on one French household, has limited hig
 
 ## Step 8 POC Demonstration
 
-[Watch the Household Energy Monitor demonstration](demo/08_dashboard_demo.mp4)
+A recorded demonstration is available at
+[demo/08_dashboard_demo.mp4](demo/08_dashboard_demo.mp4).
 
 ## Responsible use statement
 

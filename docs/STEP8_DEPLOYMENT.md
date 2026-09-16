@@ -89,4 +89,7 @@ Cloud deployment is deliberately out of scope for this POC.
 
 ## Demo media
 
-The screencast/GIF will be added after the app is tested interactively. See `demo/README.md` for the recording checklist.
+A short demonstration of CSV upload, manual input, forecasting, prediction
+intervals, and advisory results is available here:
+
+[Watch the Household Energy Monitor demonstration](../demo/08_dashboard_demo.mp4)
