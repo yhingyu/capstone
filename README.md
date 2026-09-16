@@ -366,7 +366,7 @@ docker compose up --build
 
 Open <http://localhost:8050>. Full instructions, supported input schemas, testing commands, local MLflow tracking, monitoring, versioning, rollback, and the recommended future cloud architecture are documented in [docs/STEP8_DEPLOYMENT.md](docs/STEP8_DEPLOYMENT.md).
 
-This deployment is a POC. It is trained on one French household, has limited high-use warning recall, and must not be treated as an official Meralco billing or safety system. Cloud deployment is intentionally not implemented at this stage. Demo media will be added after interactive acceptance testing.
+This deployment is a POC. It is trained on one French household, has limited high-use warning recall, and must not be treated as an official Meralco billing or safety system. Cloud deployment is intentionally not implemented at this stage.
 
 ## Step 8 POC Demonstration
 
